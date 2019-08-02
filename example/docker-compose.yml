@@ -1,0 +1,26 @@
+version: "2.4"
+
+services:
+  vue:
+    image: tanarurkerem/vue
+    volumes:
+      - "./:/home/node/app"
+      - "cache:/home/node/cache"
+      # MAC/Windows: Map node_modules directory to a named volume.
+      # Your local node_modules directory will be empty.
+      - "node_modules:/home/node/app/node_modules"
+    ports:
+      - "3000:3000"
+      - "8080:8080"
+    command: yarn serve
+
+volumes:
+  cache:
+# If you would like to use computer wide yarn and npm cache, uncomment following line, and do not forget creating volume
+# with the following command:
+#
+#  $ docker volume create cache
+#    external: true
+  node_modules:
+
+

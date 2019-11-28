@@ -1,4 +1,4 @@
-FROM node:8.11.0
+FROM node:8.16.2
 RUN npm install -g @vue/cli
 RUN npm install -g @vue/cli-service-global
 ENV YARN_CACHE_FOLDER=/home/node/cache/yarn
